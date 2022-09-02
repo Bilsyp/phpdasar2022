@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php if (isset($_POST["submit"])) {
     # code...
+    # // ! FIXED THE ERROR
     // cek username dan password
     if ($_POST["username"] == "admin" && $_POST['password'] == "123") {
         # code...
@@ -68,7 +69,7 @@ input {
                 if (isset($err)) : ?>
                 <h1 class="text-danger">Password / Username Salah</h1>
                 <?php endif ?>
-
+                
                 <form method="POST">
                     <div class="input-groups mt-4">
                         <label for="Username" class="form-label">Username</label>
