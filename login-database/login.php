@@ -44,6 +44,10 @@ img {
 <body>
     <main class="container">
 
+        <h1>Daftar Mahasiswa</h1>
+
+        <a href="tambah.php">Tambah Data Mahasiswa</a>
+
         <table class="table table-dark table-striped text-center">
             <thead>
                 <tr>
@@ -61,8 +65,9 @@ img {
                 <?php foreach ($mhs as $row) : ?>
                 <tr>
                     <td><?= $i; ?></td>
-                    <td><a href="">Ubah</a>|<a href="">hapus</a></td>
-                    <td><img class="img-responsive" src="../img/<?= $row['gambar']; ?>" alt=""></td>
+                    <td><a href="">Ubah</a>|<a href="hapus.php?id=<?= $row['id']; ?>"
+                            onclick="return confirm('yakin')">hapus</a></td>
+                    <td><img class=" img-responsive" src="../img/<?= $row['gambar']; ?>" alt=""></td>
                     <td><?= $row['nama']; ?></td>
                     <td><?= $row['email']; ?></td>
                     <td><?= $row['jurusan']; ?></td>
@@ -73,36 +78,7 @@ img {
             </thead>
 
         </table>
-        <div class="card bg-dark text-light p-4 d-none">
-            <form action="" method="POST">
-                <div class="input-groupss">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username" id="username">
 
-                </div>
-                <div class="input-groupss">
-                    <label for="nrp">nrp</label>
-                    <input type="text" class="form-control" name="nrp" id="nrp">
-
-                </div>
-                <div class="input-groupss">
-                    <label for="email">email</label>
-                    <input type="email" class="form-control" name="email" id="email">
-
-                </div>
-                <div class="input-groupss">
-                    <label for="jurusan">jurusan</label>
-                    <input type="text" class="form-control" name="jurusan" id="jurusan">
-
-                </div>
-                <div class="input-groupss">
-                    <label for="gambar">gambar</label>
-                    <input type="file" class="form-control" name="file" id="">
-
-                </div>
-                <button class="mt-3 btn btn-primary">Submit</button>
-            </form>
-        </div>
     </main>
 
 </body>
